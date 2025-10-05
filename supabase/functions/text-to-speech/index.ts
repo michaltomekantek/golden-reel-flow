@@ -18,36 +18,11 @@ serve(async (req) => {
       throw new Error('Text is required');
     }
 
-    console.log('Generating speech for text:', text);
+    console.log('Text-to-speech: returning text for browser synthesis');
 
-    const response = await fetch('https://api.openai.com/v1/audio/speech', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${Deno.env.get('OPENAI_API_KEY')}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'tts-1',
-        input: text,
-        voice: 'alloy',
-        response_format: 'mp3',
-      }),
-    });
-
-    if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.error?.message || 'Failed to generate speech');
-    }
-
-    const arrayBuffer = await response.arrayBuffer();
-    const base64Audio = btoa(
-      String.fromCharCode(...new Uint8Array(arrayBuffer))
-    );
-
-    console.log('Speech generated successfully');
-
+    // Return text for browser-based speech synthesis
     return new Response(
-      JSON.stringify({ audioContent: base64Audio }),
+      JSON.stringify({ text }),
       {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       },
@@ -59,7 +34,7 @@ serve(async (req) => {
       {
         status: 400,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      },
+      }
     );
   }
 });
