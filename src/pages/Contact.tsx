@@ -22,55 +22,55 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Skontaktuj się z nami</h1>
           <p className="text-xl text-muted-foreground">
-            Masz pytania? Chętnie na nie odpowiemy i pomożemy w realizacji Twoich celów
+            Potrzebujesz fachowca? Zadzwoń lub napisz - wycena zawsze bezpłatna!
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-          <Card>
+          <Card className="hover-scale">
+            <CardHeader>
+              <Phone className="h-10 w-10 text-primary mb-2" />
+              <CardTitle>Zadzwoń</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-base font-semibold text-foreground">
+                <a href="tel:+48123456789" className="hover:text-primary">+48 123 456 789</a>
+              </CardDescription>
+              <p className="text-sm text-muted-foreground mt-2">Pon-Pt: 7:00-18:00<br />Sob: 8:00-14:00</p>
+            </CardContent>
+          </Card>
+
+          <Card className="hover-scale">
+            <CardHeader>
+              <Phone className="h-10 w-10 text-primary mb-2" />
+              <CardTitle>Awarie 24/7</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-base font-semibold text-foreground">
+                <a href="tel:+48987654321" className="hover:text-primary">+48 987 654 321</a>
+              </CardDescription>
+              <p className="text-sm text-muted-foreground mt-2">Pogotowie<br />Dostępne całą dobę</p>
+            </CardContent>
+          </Card>
+
+          <Card className="hover-scale">
             <CardHeader>
               <Mail className="h-10 w-10 text-primary mb-2" />
               <CardTitle>Email</CardTitle>
             </CardHeader>
             <CardContent>
               <CardDescription className="text-base">
-                kontakt@firma.pl<br />
-                biuro@firma.pl
+                <a href="mailto:kontakt@firma.pl" className="hover:text-primary">kontakt@firma.pl</a>
               </CardDescription>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <Phone className="h-10 w-10 text-primary mb-2" />
-              <CardTitle>Telefon</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-base">
-                +48 123 456 789<br />
-                +48 987 654 321
-              </CardDescription>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <MapPin className="h-10 w-10 text-primary mb-2" />
-              <CardTitle>Adres</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-base">
-                ul. Przykładowa 1<br />
-                00-001 Warszawa
-              </CardDescription>
+              <p className="text-sm text-muted-foreground mt-2">Odpowiadamy w 24h</p>
             </CardContent>
           </Card>
         </div>
 
         <Card className="max-w-2xl mx-auto">
           <CardHeader>
-            <CardTitle>Wyślij wiadomość</CardTitle>
-            <CardDescription>Wypełnij formularz, a my skontaktujemy się z Tobą</CardDescription>
+            <CardTitle>Formularz kontaktowy</CardTitle>
+            <CardDescription>Wypełnij formularz, a oddzwonimy w ciągu 2 godzin</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">

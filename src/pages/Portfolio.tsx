@@ -1,49 +1,52 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
   const projects = [
     {
-      title: 'E-commerce Platform',
-      category: 'Rozwój oprogramowania',
-      description: 'Kompleksowa platforma e-commerce z systemem zarządzania produktami i integracją płatności',
-      tags: ['React', 'Node.js', 'PostgreSQL'],
-      image: 'Projekt 1'
+      title: 'Remont łazienki - Warszawa Mokotów',
+      category: 'Hydraulika + Płytki',
+      description: 'Kompleksowa wymiana instalacji wodnej, kanalizacji i glazury',
+      tags: ['Hydraulika', 'Glazura', 'Kabina prysznicowa'],
+      image: 'Realizacja 1'
     },
     {
-      title: 'Marketing Campaign',
-      category: 'Marketing cyfrowy',
-      description: 'Kampania marketingowa zwiększająca świadomość marki o 300%',
-      tags: ['SEO', 'Social Media', 'Content'],
-      image: 'Projekt 2'
+      title: 'Wymiana instalacji elektrycznej - Dom jednorodzinny',
+      category: 'Elektryka',
+      description: 'Całkowita wymiana starej instalacji elektrycznej wraz z tablicą rozdzielczą',
+      tags: ['Instalacja', 'Tablica', 'LED'],
+      image: 'Realizacja 2'
     },
     {
-      title: 'Business Dashboard',
-      category: 'Analityka',
-      description: 'Zaawansowany dashboard analityczny z real-time reporting',
-      tags: ['Analytics', 'BI', 'Visualization'],
-      image: 'Projekt 3'
+      title: 'Zabudowa garderoby na wymiar',
+      category: 'Stolarka',
+      description: 'Projektowanie i wykonanie funkcjonalnej zabudowy szafy wnękowej',
+      tags: ['Meble', 'Na wymiar', 'Organizacja'],
+      image: 'Realizacja 3'
     },
     {
-      title: 'Mobile App Design',
-      category: 'Design',
-      description: 'Nowoczesna aplikacja mobilna z intuicyjnym interfejsem użytkownika',
-      tags: ['UI/UX', 'Mobile', 'Figma'],
-      image: 'Projekt 4'
+      title: 'Malowanie mieszkania 80m²',
+      category: 'Malarstwo',
+      description: 'Odświeżenie ścian i sufitów w całym mieszkaniu',
+      tags: ['Malowanie', 'Gładź', 'Biały mat'],
+      image: 'Realizacja 4'
     },
     {
-      title: 'Security Audit',
-      category: 'Cyberbezpieczeństwo',
-      description: 'Kompleksowy audyt bezpieczeństwa infrastruktury IT',
-      tags: ['Security', 'Audit', 'Compliance'],
-      image: 'Projekt 5'
+      title: 'Wymiana grzejników - 10 szt.',
+      category: 'Hydraulika',
+      description: 'Demontaż starych i montaż nowych grzejników panelowych',
+      tags: ['Grzejniki', 'CO', 'Panelowe'],
+      image: 'Realizacja 5'
     },
     {
-      title: 'CRM System',
-      category: 'Rozwój oprogramowania',
-      description: 'System CRM dostosowany do specyficznych potrzeb klienta',
-      tags: ['CRM', 'Cloud', 'API'],
-      image: 'Projekt 6'
+      title: 'Montaż drzwi wewnętrznych - 6 szt.',
+      category: 'Stolarka',
+      description: 'Profesjonalny montaż drzwi wewnętrznych z ościeżnicami',
+      tags: ['Drzwi', 'Montaż', 'Regulacja'],
+      image: 'Realizacja 6'
     }
   ];
 
@@ -51,9 +54,9 @@ const Portfolio = () => {
     <div className="min-h-screen pt-24 pb-20">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Portfolio</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Nasze realizacje</h1>
           <p className="text-xl text-muted-foreground">
-            Wybrane projekty, które zrealizowaliśmy dla naszych klientów
+            Zobacz wybrane prace, które wykonaliśmy dla naszych klientów
           </p>
         </div>
 
@@ -81,10 +84,17 @@ const Portfolio = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-muted-foreground">
-            To tylko wybrane projekty. Mamy wiele więcej do pokazania!
+        <div className="mt-16 text-center bg-muted rounded-lg p-8">
+          <h3 className="text-2xl font-bold mb-4">Chcesz zobaczyć więcej?</h3>
+          <p className="text-muted-foreground mb-6">
+            To tylko wybrane realizacje. Zadzwoń, a pokażemy Ci więcej naszych prac!
           </p>
+          <Button size="lg" asChild>
+            <Link to="/kontakt">
+              <Phone className="mr-2 h-5 w-5" />
+              Skontaktuj się
+            </Link>
+          </Button>
         </div>
       </div>
     </div>

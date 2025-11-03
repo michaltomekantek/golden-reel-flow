@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', path: '/' },
+    { name: 'Start', path: '/' },
     { name: 'O nas', path: '/o-nas' },
     { name: 'Usługi', path: '/uslugi' },
-    { name: 'Portfolio', path: '/portfolio' },
+    { name: 'Realizacje', path: '/portfolio' },
     { name: 'Kontakt', path: '/kontakt' },
   ];
 
@@ -33,7 +33,12 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <Button>Skontaktuj się</Button>
+            <Button asChild>
+              <a href="tel:+48123456789">
+                <Phone className="mr-2 h-4 w-4" />
+                123 456 789
+              </a>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -58,7 +63,12 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <Button className="w-full">Skontaktuj się</Button>
+            <Button className="w-full" asChild>
+              <a href="tel:+48123456789">
+                <Phone className="mr-2 h-4 w-4" />
+                123 456 789
+              </a>
+            </Button>
           </div>
         )}
       </div>

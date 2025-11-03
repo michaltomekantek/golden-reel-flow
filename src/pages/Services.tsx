@@ -1,45 +1,45 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Code, Megaphone, LineChart, Palette, Shield, Headphones } from 'lucide-react';
+import { Droplet, Zap, Hammer, Paintbrush, Wrench, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
   const services = [
     {
-      icon: Code,
-      title: 'Rozwój oprogramowania',
-      description: 'Tworzymy nowoczesne aplikacje webowe i mobilne dostosowane do Twoich potrzeb',
-      features: ['Aplikacje webowe', 'Aplikacje mobilne', 'Systemy dedykowane']
+      icon: Droplet,
+      title: 'Usługi hydrauliczne',
+      description: 'Kompleksowe usługi hydrauliczne - od drobnych napraw po instalacje',
+      features: ['Naprawa kranów i baterii', 'Udrażnianie rur', 'Montaż instalacji', 'Wymiana grzejników']
     },
     {
-      icon: Megaphone,
-      title: 'Marketing cyfrowy',
-      description: 'Skuteczne strategie marketingowe zwiększające widoczność Twojej marki',
-      features: ['SEO/SEM', 'Social media', 'Content marketing']
+      icon: Zap,
+      title: 'Usługi elektryczne',
+      description: 'Bezpieczne i profesjonalne usługi elektryczne z uprawnieniami',
+      features: ['Wymiana instalacji', 'Montaż gniazdek', 'Tablice rozdzielcze', 'Oświetlenie LED']
     },
     {
-      icon: LineChart,
-      title: 'Analityka biznesowa',
-      description: 'Analizujemy dane i dostarczamy insights wspierających decyzje biznesowe',
-      features: ['Analiza danych', 'Raporty', 'Optymalizacja procesów']
+      icon: Hammer,
+      title: 'Usługi stolarskie',
+      description: 'Meble na wymiar, remonty i naprawa elementów drewnianych',
+      features: ['Meble na wymiar', 'Montaż drzwi', 'Naprawa mebli', 'Zabudowy wnęk']
     },
     {
-      icon: Palette,
-      title: 'Design & UX',
-      description: 'Projektujemy intuicyjne interfejsy zapewniające świetne doświadczenia użytkowników',
-      features: ['UI/UX Design', 'Branding', 'Prototypowanie']
+      icon: Paintbrush,
+      title: 'Usługi malarskie',
+      description: 'Profesjonalne malowanie i wykończenia wnętrz',
+      features: ['Malowanie ścian', 'Tapetowanie', 'Gładź szpachlowa', 'Panele ścienne']
     },
     {
-      icon: Shield,
-      title: 'Cyberbezpieczeństwo',
-      description: 'Chronimy Twoje dane i infrastrukturę przed zagrożeniami cyfrowym',
-      features: ['Audyty bezpieczeństwa', 'Szkolenia', 'Monitoring']
+      icon: Wrench,
+      title: 'Drobne naprawy',
+      description: 'Szybkie naprawy i usługi ogólnobudowlane',
+      features: ['Wieszanie półek', 'Naprawa okien', 'Montaż karniszy', 'Drobne remonty']
     },
     {
-      icon: Headphones,
-      title: 'Wsparcie techniczne',
-      description: 'Zapewniamy profesjonalne wsparcie i utrzymanie systemów IT',
-      features: ['24/7 Support', 'Utrzymanie', 'Aktualizacje']
+      icon: Phone,
+      title: 'Interwencje awaryjne',
+      description: 'Dostępni 24/7 w sytuacjach awaryjnych',
+      features: ['Awarie hydrauliczne', 'Awarie elektryczne', 'Pilne naprawy', 'Szybka reakcja']
     }
   ];
 
@@ -49,7 +49,7 @@ const Services = () => {
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Nasze usługi</h1>
           <p className="text-xl text-muted-foreground">
-            Oferujemy szeroki zakres usług dostosowanych do potrzeb współczesnych przedsiębiorstw
+            Kompleksowe usługi dla Twojego domu i firmy - szybko, solidnie, uczciwie
           </p>
         </div>
 
@@ -76,13 +76,19 @@ const Services = () => {
         </div>
 
         <div className="bg-muted rounded-lg p-8 md:p-12 text-center">
-          <h2 className="text-3xl font-bold mb-4">Potrzebujesz pomocy w wyborze?</h2>
+          <h2 className="text-3xl font-bold mb-4">Nie ma Twojej usługi na liście?</h2>
           <p className="text-lg text-muted-foreground mb-6">
-            Skontaktuj się z nami, a pomożemy dobrać idealne rozwiązanie dla Twojego biznesu
+            Zadzwoń - wykonujemy również wiele innych usług. Bezpłatna wycena!
           </p>
-          <Button size="lg" asChild>
-            <Link to="/kontakt">Porozmawiajmy</Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg">
+              <Phone className="mr-2 h-5 w-5" />
+              Zadzwoń: 123 456 789
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <Link to="/kontakt">Formularz kontaktowy</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </div>
